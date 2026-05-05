@@ -20,4 +20,8 @@ public class Category : EntityBase
     public required int SubCategoryId { get; set; }
     public required int Sort { get; set; }
 
+
+    public virtual ICollection<Detail> Details { get; set; }
+    public ICollection<Product> Products { get; set; }
+
 }

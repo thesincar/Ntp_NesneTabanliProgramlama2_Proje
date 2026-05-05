@@ -4,7 +4,8 @@
     "Ntp.Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": false,
+      "launchUrl": "scalar",
+      "launchBrowser": true,
       "applicationUrl": "http://localhost:5052",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

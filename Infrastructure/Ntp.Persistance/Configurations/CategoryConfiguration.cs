@@ -15,7 +15,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             Name = "Elektronik",
             SubCategoryId = 0,
             Sort = 1,
-            CreatedDate = DateTime.Now,
+            IsDeleted = false,
         };
 
         Category c2 = new()
@@ -24,7 +24,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             Name = "Moda",
             SubCategoryId = 0,
             Sort = 2,
-            CreatedDate = DateTime.Now.AddMinutes(rnd.NextInt64() * 20),
+            IsDeleted = false,
         };
 
         Category c3 = new()
@@ -33,7 +33,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             Name = "Oto, Bahçe, Yapı Merket",
             SubCategoryId = 0,
             Sort = 3,
-            CreatedDate = DateTime.Now.AddMinutes(rnd.NextInt64() * 20),
+            IsDeleted = false,
         };
 
         Category c4 = new()
@@ -42,7 +42,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             Name = "Bilgisayar ve Tablet",
             SubCategoryId = 1,
             Sort = 1,
-            CreatedDate = DateTime.Now.AddMinutes(rnd.NextInt64() * 20),
+            IsDeleted = false,
         };
 
         Category c5 = new()
@@ -51,7 +51,7 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
             Name = "Beyaz Eşye",
             SubCategoryId = 1,
             Sort = 2,
-            CreatedDate = DateTime.Now.AddMinutes(rnd.NextInt64() * 20),
+            IsDeleted = false,
         };
 
         builder.HasData(c1, c2, c3, c4, c5);
