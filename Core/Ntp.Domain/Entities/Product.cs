@@ -15,9 +15,9 @@ public class Product : EntityBase
         price = Price;
         description = Description;
     }
-    public required string Name { get; set; }
-    public required int Price { get; set; }
+    public string Name { get; set; }
+    public int Price { get; set; }
     //public string ImageUrl { get; set; }
-    public required string Description { get; set; }
+    public string Description { get; set; }
     public ICollection<Category> Categories { get; set; }
 }

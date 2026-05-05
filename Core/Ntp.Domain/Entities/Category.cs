@@ -16,9 +16,9 @@ public class Category : EntityBase
         Sort = sort;
     }
 
-    public required string Name { get; set; }
-    public required int SubCategoryId { get; set; }
-    public required int Sort { get; set; }
+    public string Name { get; set; }
+    public int SubCategoryId { get; set; }
+    public int Sort { get; set; }
 
 
     public virtual ICollection<Detail> Details { get; set; }
