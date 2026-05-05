@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\Ntp.Application\Ntp.Application.csproj" />
     <ProjectReference Include="..\..\Core\Ntp.Domain\Ntp.Domain.csproj" />
   </ItemGroup>
 
