@@ -1,4 +1,5 @@
 using Ntp.Application;
+using Ntp.Mapper;
 using Ntp.Persistance;
 using Scalar.AspNetCore;
 
@@ -20,6 +21,7 @@ builder.Configuration
 
 builder.Services.AddPersistance(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddCustomMapper();
 
 var app = builder.Build();
 

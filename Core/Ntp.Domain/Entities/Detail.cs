@@ -11,9 +11,9 @@ public class Detail : EntityBase
 
     public Detail(string title, string value, int categoryId)
     {
-        title = Title;
-        value = Description;
-        categoryId = CategoryId;
+        Title = title;
+        Description = value;
+        CategoryId = categoryId;
     }
 
     public string Title { get; set; }

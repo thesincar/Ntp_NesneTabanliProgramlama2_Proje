@@ -11,9 +11,9 @@ public class Product : EntityBase
 
     public Product(string name, int price, string description)
     {
-        name = Name;
-        price = Price;
-        description = Description;
+        Name = name;
+        Price = price;
+        Description = description;
     }
     public string Name { get; set; }
     public int Price { get; set; }

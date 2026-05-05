@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/Core/">
+    <Project Path="Core/Mapper/Ntp.Mapper.csproj" Id="cc207665-808b-4282-a1a2-54a30806802b" />
     <Project Path="Core/Ntp.Application/Ntp.Application.csproj" />
     <Project Path="Core/Ntp.Domain/Ntp.Domain.csproj" />
   </Folder>

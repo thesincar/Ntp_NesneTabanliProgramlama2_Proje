@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="14.1.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.7" />
+    <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ntp.Domain\Ntp.Domain.csproj" />
+    <ProjectReference Include="..\Ntp.Application\Ntp.Application.csproj" />
   </ItemGroup>
 
 </Project>
