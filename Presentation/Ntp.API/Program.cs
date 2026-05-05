@@ -1,3 +1,4 @@
+using Ntp.Application;
 using Ntp.Persistance;
 using Scalar.AspNetCore;
 
@@ -18,6 +19,7 @@ builder.Configuration
 
 
 builder.Services.AddPersistance(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 
