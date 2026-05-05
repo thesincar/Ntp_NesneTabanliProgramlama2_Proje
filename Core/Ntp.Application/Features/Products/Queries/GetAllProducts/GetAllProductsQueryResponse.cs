@@ -1,6 +1,4 @@
-﻿using Ntp.Application.DTOs;
-
-namespace Ntp.Application.Features.Products.Queries.GetAllProducts;
+﻿namespace Ntp.Application.Features.Products.Queries.GetAllProducts;
 
 public class GetAllProductsQueryResponse
 {
@@ -8,5 +6,5 @@ public class GetAllProductsQueryResponse
     public string Description { get; set; }
     public decimal Price { get; set; }
 
-    public CategoryDto Category { get; set; }
+
 }

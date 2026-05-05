@@ -1,17 +1,15 @@
-﻿using IMapperInterface = global::AutoMapper.IMapper;
-using MapperConfig = global::AutoMapper.MapperConfiguration;
-using MapperConfigExpression = global::AutoMapper.MapperConfigurationExpression;
+﻿using MapperConfiguration = global::AutoMapper.MapperConfiguration;
+using MapperConfigurationExpression = global::AutoMapper.MapperConfigurationExpression;
+using RuntimeMapper = global::AutoMapper.IMapper;
 
 namespace Ntp.Mapper.AutoMapper;
 
 public class Mapper : Application.Interfaces.AutoMapper.IMapper
 {
-    //public static List<TypePair> typePairs = new ();
-
     public record TypePair(Type SourceType, Type DestinationType);
     public static List<TypePair> typePairs = new();
 
-    private IMapperInterface MapperContainer;
+    private RuntimeMapper MapperContainer;
     public TDestination Map<TDestination, TSource>(TSource source, string? ignore = null)
     {
         Config<TDestination, TSource>(5, ignore);
@@ -41,16 +39,13 @@ public class Mapper : Application.Interfaces.AutoMapper.IMapper
         var typePair = new TypePair(typeof(TSource), typeof(TDestination));
         var exists = typePairs.Any(a => a.DestinationType == typePair.DestinationType && a.SourceType == typePair.SourceType);
 
-        
         if (!exists)
             typePairs.Add(typePair);
 
-        
         if (MapperContainer is not null && exists && ignore is null)
             return;
 
-        var cfg = new MapperConfigExpression();
-
+        var cfg = new MapperConfigurationExpression();
         foreach (var item in typePairs)
         {
             if (ignore is not null)
@@ -59,12 +54,7 @@ public class Mapper : Application.Interfaces.AutoMapper.IMapper
                 cfg.CreateMap(item.SourceType, item.DestinationType).MaxDepth(depth).ReverseMap();
         }
 
-        var config = new MapperConfig(cfg, global::Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
-
-
-
-
+        var config = new MapperConfiguration(cfg, global::Microsoft.Extensions.Logging.Abstractions.NullLoggerFactory.Instance);
         MapperContainer = config.CreateMapper();
     }
-
 }
